@@ -12,7 +12,6 @@
     patients: `${base}/patients`,
     'patient-booking': patientBookingHref,
     'provider-booking': providerBookingHref,
-    collective: `${base}/collective`,
     insurance: `${base}/patients#insurance`
   };
 </script>

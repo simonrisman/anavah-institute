@@ -19,8 +19,7 @@ export const nav = [
   { href: `${base}/patients`, label: 'For Patients' },
   { href: `${base}/providers`, label: 'For Providers' },
   { href: `${base}/wellness`, label: 'Wellness' },
-  { href: `${base}/services`, label: 'Services' },
-  { href: `${base}/collective`, label: 'Collective' }
+  { href: `${base}/services`, label: 'Services' }
 ];
 
 export const footerExplore = [
@@ -28,8 +27,7 @@ export const footerExplore = [
   { href: `${base}/patients`, label: 'For Patients' },
   { href: `${base}/providers`, label: 'For Providers' },
   { href: `${base}/services`, label: 'Services' },
-  { href: `${base}/wellness`, label: 'Eight Dimensions' },
-  { href: `${base}/collective`, label: 'Anavah Collective' }
+  { href: `${base}/wellness`, label: 'Eight Dimensions' }
 ];
 
 export const footerInfo = [
@@ -145,27 +143,7 @@ export const serviceGroups = [
   }
 ];
 
-export const collectiveFeatures = [
-  { title: 'Discussion boards', text: 'Share experiences, ask questions, and connect with others.' },
-  {
-    title: 'Interest-based groups',
-    text: 'Anxiety, ADHD, relationships, personal growth, grief, and more.'
-  },
-  {
-    title: 'Community events',
-    text: 'Optional wellness workshops, educational sessions, and peer gatherings.'
-  },
-  {
-    title: 'Peer encouragement',
-    text: 'Celebrate progress, share coping strategies, and offer mutual support.'
-  },
-  {
-    title: 'Educational resources',
-    text: 'Provider-created content, guided exercises, wellness materials, and training modules.'
-  }
-];
-
-export type CtaKind = 'patients' | 'patient-booking' | 'provider-booking' | 'collective' | 'insurance';
+export type CtaKind = 'patients' | 'patient-booking' | 'provider-booking' | 'insurance';
 
 export type Dimension = {
   slug: string;
@@ -264,13 +242,9 @@ export const dimensions: Dimension[] = [
     ],
     support: [
       'Coordinated care — keeping providers aligned so patients are not left navigating the system alone',
-      'Community Hub — an anonymous-friendly space for connection, group wellness classes, and peer support',
       'Lifestyle coaching — exploring social support, barriers to connection, and strategies that fit each person’s life'
     ],
-    ctas: [
-      { kind: 'collective', label: 'Explore the Collective' },
-      { kind: 'provider-booking', label: 'Interested in joining as a provider' }
-    ]
+    ctas: defaultCtas
   },
   {
     slug: 'physical',

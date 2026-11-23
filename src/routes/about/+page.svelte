@@ -49,12 +49,9 @@
   </div>
 </section>
 
-<section class="wrap split" id="phillip" aria-labelledby="phillip-title">
-  <div class="monogram" role="img" aria-label="Phillip Scherbakov monogram">
-    <strong>PS</strong>
-    <span>Anavah Institute</span>
-  </div>
-  <div>
+<section class="wrap narrow profile" id="phillip" aria-labelledby="phillip-title">
+  <!-- Headshot goes here as the first child of .profile, e.g. <img class="profile-photo" ...>. -->
+  <div class="profile-body">
     <p class="eyebrow">Meet Phillip</p>
     <h2 class="h2" id="phillip-title">Phillip Scherbakov</h2>
     <p class="role">Psychiatric nurse practitioner</p>
