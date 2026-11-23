@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-  <title>Anavah Institute | Empowering Radical Responsibility</title>
+  <title>Anavah Institute | Phillip Scherbakov</title>
   <meta
     name="description"
-    content="Anavah Institute is an interconnected care system: integrative psychiatric care, care navigation, and professional education. Clinical care in Ohio and New York."
+    content="Anavah Institute is Phillip Scherbakov’s integrative psychiatry practice. Clinical care in Ohio and New York, with provider services worldwide."
   />
 </svelte:head>
 

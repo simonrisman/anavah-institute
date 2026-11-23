@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-  <title>About · Anavah Institute</title>
+  <title>Phillip Scherbakov · Anavah Institute</title>
   <meta
     name="description"
-    content="Anavah is the Hebrew word for humility. Anavah Institute bridges the gaps between the eight dimensions of wellness."
+    content="Phillip Scherbakov is a psychiatric nurse practitioner at Anavah Institute, an integrative psychiatry practice in Ohio and New York."
   />
 </svelte:head>
 

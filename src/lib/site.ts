@@ -1,5 +1,7 @@
 import { base } from '$app/paths';
 
+export const siteOrigin = 'https://anavah-institute.org';
+
 export const practice = {
   name: 'Anavah Institute',
   tagline: 'Empowering Radical Responsibility',
@@ -11,7 +13,33 @@ export const practice = {
   headway: 'https://care.headway.co/providers/phillip-scherbakov-2',
   linkedin: 'https://www.linkedin.com/in/phillip-scherbakov/',
   region: 'Ohio and New York',
-  providerReach: 'worldwide'
+  providerReach: 'worldwide',
+  clinician: 'Phillip Scherbakov',
+  clinicianRole: 'Psychiatric nurse practitioner'
+};
+
+export const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalOrganization',
+      name: practice.name,
+      url: siteOrigin,
+      email: practice.email,
+      telephone: '+1-216-625-0028',
+      areaServed: ['Ohio', 'New York'],
+      employee: { '@id': `${siteOrigin}/about#phillip` }
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteOrigin}/about#phillip`,
+      name: practice.clinician,
+      jobTitle: practice.clinicianRole,
+      url: `${siteOrigin}/about`,
+      worksFor: { '@type': 'MedicalOrganization', name: practice.name, url: siteOrigin },
+      sameAs: [practice.linkedin, practice.headway]
+    }
+  ]
 };
 
 export const nav = [
