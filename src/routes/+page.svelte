@@ -2,96 +2,59 @@
   import { base } from '$app/paths';
   import { patientBookingHref } from '$lib/booking';
   import Cta from '$lib/components/Cta.svelte';
-  import { patientSteps } from '$lib/site';
 </script>
 
 <svelte:head>
-  <title>Anavah Institute | Integrative psychiatry in Ohio and New York</title>
+  <title>Anavah Institute | Empowering Radical Responsibility</title>
   <meta
     name="description"
-    content="Holistic psychiatric care that connects mental health and physical medicine. Clinical care in Ohio and New York. The first consultation is free."
+    content="Anavah Institute is an interconnected care system: integrative psychiatric care, care navigation, and professional education. Clinical care in Ohio and New York."
   />
 </svelte:head>
 
-<section class="wrap hero" id="top">
-  <div class="hero-copy">
-    <p class="eyebrow">Integrative psychiatry · Ohio & New York</p>
-    <h1 class="display">Holistic psychiatric care for your mind and body.</h1>
-    <p class="motto">Empowering radical responsibility.</p>
-    <p class="lede">
-      Anavah connects mental health and physical medicine: psychiatry, lab work, nutrition, and
-      fitness, coordinated in one plan.
+<section
+  class="hero"
+  id="top"
+  style="background-image: linear-gradient(90deg, rgba(10, 12, 14, 0.82), rgba(10, 12, 14, 0.24)), url('{base}/hero-clouds.jpg')"
+>
+  <div class="wrap">
+    <p class="eyebrow">Anavah Institute</p>
+    <h1 class="display">Empowering<br /><i>Radical Responsibility</i></h1>
+    <p class="lead">
+      A more connected approach to health — where humility, collaboration, and whole-person care
+      move us forward.
     </p>
     <div class="actions">
-      <a class="btn" href={patientBookingHref}>Book a free consultation</a>
-      <a class="link-quiet" href="{base}/patients#practical">Insurance and fees</a>
+      <a class="btn" href="{base}/about">Discover Anavah <span aria-hidden="true">↗</span></a>
+      <a class="btn outline hero-outline" href={patientBookingHref}>Request a free consultation</a>
     </div>
-    <p class="fine">Seeing patients in Ohio and New York. Provider services worldwide.</p>
-  </div>
-  <div class="hero-photo">
-    <img
-      src="{base}/hero-clouds.jpg"
-      alt="Sunrise over a wide bank of clouds, the photograph used on the Anavah Institute site."
-    />
+    <p class="fine">Clinical care in Ohio and New York. Provider services worldwide.</p>
   </div>
 </section>
 
-<section class="band" id="expect">
-  <div class="wrap section">
-    <div class="section-head">
-      <h2 class="subhead">What to expect as a patient</h2>
-      <p class="lede">Four steps, from first conversation to ongoing care.</p>
-    </div>
-    <div class="steps">
-      {#each patientSteps as step, index}
-        <article class="step">
-          <div class="step-num">{String(index + 1).padStart(2, '0')}</div>
-          <h3 class="item-title">{step.title}</h3>
-          <p class="item-text">{step.text}</p>
-        </article>
-      {/each}
-    </div>
+<section class="wrap split" id="care-system" aria-labelledby="care-system-title">
+  <div>
+    <p class="eyebrow">A different kind of care system</p>
+    <h2 class="h2" id="care-system-title">Health is never just one thing.</h2>
   </div>
-</section>
-
-<section class="wrap doors" id="paths">
-  <article class="door door-navy">
-    <h3>For patients</h3>
-    <p>
-      Psychiatric intake and follow-up, medication management, blood work analysis, nutrition, and
-      fitness guidance.
+  <div>
+    <p class="lead">
+      Anavah is more than a private psychiatric practice. It is an interconnected care system built
+      around one fundamental belief: patients deserve access to the best possible care in every
+      dimension of their well-being.
     </p>
-    <a class="btn btn-light" href="{base}/patients">See patient care</a>
-  </article>
-  <article class="door door-paper" id="providers">
-    <h3>For providers and organizations</h3>
-    <p class="item-text">
-      Consultation calls, referrals, care coordination, and lunch-and-learns for clinics, attorneys,
-      and employers. Available worldwide.
-    </p>
-    <a class="btn" href="{base}/providers">See provider services</a>
-  </article>
+    <a class="btn dark" href="{base}/patients">Explore patient care</a>
+  </div>
 </section>
 
-<section class="band" id="about">
-  <div class="wrap section split">
-    <div class="portrait">
-      <strong>Phillip Scherbakov</strong>
-      <span>Portrait to be added</span>
-    </div>
-    <div class="stack">
-      <h2 class="subhead">Meet Phillip Scherbakov</h2>
-      <p class="role">Psychiatric nurse practitioner</p>
-      <p class="lede">
-        Anavah is more than a private practice. It is a way for patients to get the care they need,
-        and for wellness providers to work together toward better outcomes.
-      </p>
-      <p class="item-text">
-        Care looks across eight areas of wellness: emotional, environmental, financial,
-        intellectual, social, physical, spiritual, and occupational.
-      </p>
-      <a class="link-quiet" href="{base}/about">More about the institute</a>
-    </div>
+<section class="section-dark" id="vision" aria-labelledby="vision-title">
+  <div class="wrap">
+    <h2 class="eyebrow" id="vision-title">Our vision</h2>
+    <p class="quote">
+      Move beyond fragmented, one-dimensional healthcare — and make collaboration, humility, and
+      whole-person care the norm.
+    </p>
+    <a class="btn" href="{base}/providers">Partner with Anavah</a>
   </div>
 </section>
 

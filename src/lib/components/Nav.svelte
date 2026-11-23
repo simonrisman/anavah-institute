@@ -1,7 +1,6 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { page } from '$app/stores';
-  import { patientBookingHref } from '$lib/booking';
   import { nav } from '$lib/site';
 
   let open = $state(false);
@@ -15,12 +14,14 @@
   }
 </script>
 
-<header class="site-header">
+<svelte:window onkeydown={(event) => event.key === 'Escape' && close()} />
+
+<header class="topbar">
   <a class="skip" href="#content">Skip to content</a>
-  <div class="wrap bar">
+  <div class="nav">
     <a class="brand" href="{base}/" onclick={close}>
-      <img src="{base}/logo.png" alt="" width="48" height="40" />
-      <span>
+      <img src="{base}/logo.png" alt="" width="48" height="48" />
+      <span class="brand-text">
         <span class="brand-name">Anavah</span>
         <span class="brand-sub">Institute</span>
       </span>
@@ -32,17 +33,23 @@
       aria-controls="site-nav"
       onclick={() => (open = !open)}
     >
-      {open ? 'Close' : 'Menu'}
+      <span aria-hidden="true">{open ? '✕' : '☰'}</span>
+      <span class="sr-only">{open ? 'Close navigation' : 'Open navigation'}</span>
     </button>
-    <nav id="site-nav" class="site-nav" class:open aria-label="Main">
+    <nav id="site-nav" class="navlinks" class:open aria-label="Main">
       {#each nav as item}
         <a
           href={item.href}
-          class:active={current(item.href, $page.url.pathname)}
+          aria-current={current(item.href, $page.url.pathname) ? 'page' : undefined}
           onclick={close}>{item.label}</a
         >
       {/each}
-      <a class="btn" href={patientBookingHref} onclick={close}>Book a free consultation</a>
+      <a
+        class="cta"
+        href="{base}/contact"
+        aria-current={current(`${base}/contact`, $page.url.pathname) ? 'page' : undefined}
+        onclick={close}>Connect</a
+      >
     </nav>
   </div>
 </header>

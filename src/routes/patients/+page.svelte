@@ -1,71 +1,63 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { patientBookingHref } from '$lib/booking';
-  import Cta from '$lib/components/Cta.svelte';
-  import { patientServices, practice } from '$lib/site';
+  import { patientSteps, practice } from '$lib/site';
 </script>
 
 <svelte:head>
-  <title>For patients · Anavah Institute</title>
+  <title>For Patients · Anavah Institute</title>
   <meta
     name="description"
-    content="Psychiatric care at Anavah includes intake, medication, labs, nutrition, fitness, and care coordination in Ohio and New York."
+    content="Integrative psychiatric services that see the whole person. Clinical care in Ohio and New York. The first consultation is free."
   />
 </svelte:head>
 
-<header class="wrap page-header">
-  <p class="eyebrow">For patients</p>
-  <h1 class="display wide">Care that connects your mind and your body.</h1>
-  <p class="lede">
-    Psychiatric care at Anavah goes beyond a medication check. We look at your labs, nutrition, and
-    movement too, and bring it together in one plan.
+<section class="wrap" id="care">
+  <p class="eyebrow">For Patients</p>
+  <h1 class="h2">Care that sees the whole person.</h1>
+  <p class="lead">
+    We offer integrative psychiatric services with specialists in a broad array of disorders. We
+    strive to see you for who you are — a human being, not just a myriad of symptoms. If we are not
+    what you are looking for, we will help find someone who is.
   </p>
-  <div>
-    <a class="btn" href={patientBookingHref}>Book a free consultation</a>
-  </div>
-</header>
+  <a class="btn" href={patientBookingHref}
+    >Request a free consultation <span aria-hidden="true">↗</span></a
+  >
 
-<section class="band" id="services">
-  <div class="wrap section">
-    <div class="section-head">
-      <h2 class="subhead">What we offer</h2>
-    </div>
-    <div class="services">
-      {#each patientServices as service}
-        <article class="service">
-          <h3 class="item-title">{service.title}</h3>
-          <p class="item-text">{service.text}</p>
-        </article>
-      {/each}
+  <h2 class="sr-only" id="steps">How care works</h2>
+  <ol class="grid four plain" aria-labelledby="steps">
+    {#each patientSteps as step}
+      <li class="card">
+        <span class="num">{step.tag.toUpperCase()}</span>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </li>
+    {/each}
+  </ol>
+</section>
+
+<section class="section-gold" id="insurance" aria-labelledby="insurance-title">
+  <div class="wrap">
+    <p class="eyebrow">Insurance &amp; getting started</p>
+    <h2 class="h2" id="insurance-title">Clear options for getting started.</h2>
+    <p class="lead">
+      The first consultation is free. We offer private pay and insurance options. If we are not
+      in-network, we can help you send superbills to your insurance provider for potential
+      reimbursement. Coverage and reimbursement vary by plan.
+    </p>
+    <p>
+      Insurance visits can also be booked through <a href={practice.headway}>Headway</a>. Clinical
+      care is offered in {practice.region}.
+    </p>
+    <p class="notice">
+      Medical and legal documentation services must occur during a scheduled session. Confirm
+      availability and insurance details directly before booking. This is not emergency care: in an
+      emergency, call 911; for crisis support, call or text 988. Please don’t send health details
+      ahead of the visit.
+    </p>
+    <div class="actions">
+      <a class="btn dark" href={patientBookingHref}>Request a free consultation</a>
+      <a class="btn outline" href="{base}/services">See all services</a>
     </div>
   </div>
 </section>
-
-<section class="wrap section" id="practical">
-  <div class="section-head">
-    <h2 class="subhead">The practical details</h2>
-  </div>
-  <div class="services">
-    <article class="service">
-      <h3 class="item-title">Insurance</h3>
-      <p class="item-text">
-        Some insurance plans are accepted. Contact the practice for the current list. Insurance
-        visits can also be booked through
-        <a href={practice.headway}>Headway</a>.
-      </p>
-    </article>
-    <article class="service">
-      <h3 class="item-title">Fees</h3>
-      <p class="item-text">
-        The first consultation is free for now. Fees for ongoing care are discussed at that visit.
-      </p>
-    </article>
-    <article class="service">
-      <h3 class="item-title">Where we practice</h3>
-      <p class="item-text">
-        Clinical care in {practice.region}. Provider services are available {practice.providerReach}.
-      </p>
-    </article>
-  </div>
-</section>
-
-<Cta />
